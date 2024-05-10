@@ -37,6 +37,7 @@ export const Header = (props: Partial<HeaderProps>) => {
                   size={button.size}
                   iconRight={button.iconRight}
                   iconLeft={button.iconLeft}
+                  onClick={button.onClick}
                 >
                   {button.title}
                 </Button>
@@ -61,7 +62,12 @@ const HeaderDefaults: HeaderProps = {
   heading: 'Improve Your Listening Skills',
   description: 'Enhance your language skills with our interactive game.',
   buttons: [
-    { title: 'Play' },
+    {
+      title: 'Play',
+      onClick: () => {
+        document.getElementById('game')?.scrollIntoView({ behavior: 'smooth' });
+      },
+    },
     { title: 'Learn More', variant: 'secondary-alt' },
   ],
   image: {

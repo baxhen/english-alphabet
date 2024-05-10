@@ -44,7 +44,7 @@ export const Ebook = (props: Partial<EbookProps>) => {
           <div>
             <img
               src={image.src}
-              className="w-full object-cover"
+              className="w-full object-cover img"
               alt={image.alt}
             />
           </div>
