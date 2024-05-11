@@ -19,9 +19,9 @@ export type TGameLevel = keyof typeof SPEED_MAP;
 export const SPEED_MAP = {
   beginner: 2000,
   intermediate: 1000,
-  proficient: 800,
-  advanced: 700,
-  fluent: 600,
+  proficient: 900,
+  advanced: 800,
+  fluent: 700,
 };
 
 // map the word count difficulty to the number of letters to spell with 5 game levels
