@@ -1,6 +1,7 @@
 export const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
 
-export const ALPHABET_LETTER_AUDIO_NAME = (letter: string) => `${letter}.mp3`;
+export const ALPHABET_LETTER_AUDIO_NAME = (letter: string) =>
+  `./audios/${letter}.mp3`;
 
 // get a random letter from the alphabet
 export const getRandomLetter = () => {
