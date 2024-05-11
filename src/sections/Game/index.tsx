@@ -1,8 +1,17 @@
 'use client';
 
-import { Button, Input } from '@relume_io/relume-ui';
+import {
+  Button,
+  Input,
+  Select,
+  SelectTrigger,
+  SelectItem,
+  SelectValue,
+  SelectContent,
+} from '@relume_io/relume-ui';
 import type { ImageProps, ButtonProps } from '@relume_io/relume-ui';
 import { useAlphabetGame } from './useAlphabetGame';
+import { gameLevels } from './constants';
 
 type Props = {
   heading: string;
@@ -26,7 +35,8 @@ export const Game = (props: Partial<GameProps>) => {
     onUserInputChange,
     gameInProgress,
     checkUserScore,
-    letters,
+    gameLevel,
+    changeGameLevel,
   } = useAlphabetGame();
 
   return (
@@ -53,6 +63,25 @@ export const Game = (props: Partial<GameProps>) => {
                 onChange={onUserInputChange}
               />
               <Button onClick={checkUserScore}>Check</Button>
+              <Select onValueChange={changeGameLevel}>
+                <SelectTrigger>
+                  <SelectValue
+                    placeholder="Select one..."
+                    className="capitalize"
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  {gameLevels.map((item) => (
+                    <SelectItem
+                      value={item.value}
+                      key={item.value}
+                      className="capitalize"
+                    >
+                      {item.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
         </div>

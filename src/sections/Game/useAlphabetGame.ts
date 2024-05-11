@@ -4,14 +4,18 @@ import { useCallback, useEffect, useState } from 'react';
 import {
   ALPHABET,
   ALPHABET_LETTER_AUDIO_NAME,
+  SPEED_MAP,
+  TGameLevel,
+  WORD_COUNT_MAP,
   getRandomLetters,
 } from '@/sections/Game/constants';
 
 export const useAlphabetGame = () => {
-  const [letterCount, setLetterCount] = useState(10); // number of letters to spell [default: 16
+  const [gameLevel, setGameLevel] = useState<TGameLevel>('easy'); // game difficulty level [default: easy
+  const [letterCount, setLetterCount] = useState(WORD_COUNT_MAP[gameLevel]); // number of letters to spell [default: 16
   const [letters, setLetters] = useState<string[]>([]);
   const [lettersSpelling, setLettersSpelling] = useState(letters);
-  const [speed, setSpeed] = useState(1000); // speed of spelling letters [ms]
+  const [speed, setSpeed] = useState(SPEED_MAP[gameLevel]); // speed of spelling letters [ms]
   const [userInput, setUserInput] = useState(''); // user input to spell the letters
   const [gameInProgress, setGameInProgress] = useState(false); // flag to indicate if the game is in progress
 
@@ -47,6 +51,12 @@ export const useAlphabetGame = () => {
     spellLetters();
   };
 
+  const changeGameLevel = (level: TGameLevel) => {
+    setGameLevel(level);
+    setLetterCount(WORD_COUNT_MAP[level]);
+    setSpeed(SPEED_MAP[level]);
+  };
+
   const onUserInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserInput(e.target.value);
   };
@@ -71,5 +81,7 @@ export const useAlphabetGame = () => {
     gameInProgress,
     checkUserScore,
     letters,
+    changeGameLevel,
+    gameLevel,
   };
 };
