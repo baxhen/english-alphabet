@@ -11,7 +11,7 @@ import {
 } from '@/sections/Game/constants';
 
 export const useAlphabetGame = () => {
-  const [gameLevel, setGameLevel] = useState<TGameLevel>('easy'); // game difficulty level [default: easy
+  const [gameLevel, setGameLevel] = useState<TGameLevel>('beginner'); // game difficulty level [default: beginner
   const [letterCount, setLetterCount] = useState(WORD_COUNT_MAP[gameLevel]); // number of letters to spell [default: 16
   const [letters, setLetters] = useState<string[]>([]);
   const [lettersSpelling, setLettersSpelling] = useState(letters);
