@@ -64,11 +64,8 @@ export const Game = (props: Partial<GameProps>) => {
               />
               <Button onClick={checkUserScore}>Check</Button>
               <Select onValueChange={changeGameLevel}>
-                <SelectTrigger>
-                  <SelectValue
-                    placeholder="Select one..."
-                    className="capitalize"
-                  />
+                <SelectTrigger className="capitalize">
+                  <SelectValue placeholder="Select one..." />
                 </SelectTrigger>
                 <SelectContent>
                   {gameLevels.map((item) => (
