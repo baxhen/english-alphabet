@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Button } from '@relume_io/relume-ui';
-import type { ImageProps, ButtonProps } from '@relume_io/relume-ui';
-import './style.css';
+import { Button } from "@relume_io/relume-ui";
+import type { ImageProps, ButtonProps } from "@relume_io/relume-ui";
+import "./style.css";
 
 type Props = {
   heading: string;
@@ -11,7 +11,7 @@ type Props = {
   image: ImageProps;
 };
 
-export type HeaderProps = React.ComponentPropsWithoutRef<'section'> & Props;
+export type HeaderProps = React.ComponentPropsWithoutRef<"section"> & Props;
 
 export const Header = (props: Partial<HeaderProps>) => {
   const { heading, description, buttons, image } = {
@@ -59,19 +59,19 @@ export const Header = (props: Partial<HeaderProps>) => {
 };
 
 const HeaderDefaults: HeaderProps = {
-  heading: 'Improve Your Listening Skills',
-  description: 'Enhance your language skills with our interactive game.',
+  heading: "Improve Your Listening Skills",
+  description: "Enhance your language skills with our interactive game.",
   buttons: [
     {
-      title: 'Play',
+      title: "Play",
       onClick: () => {
-        document.getElementById('game')?.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById("game")?.scrollIntoView({ behavior: "smooth" });
       },
     },
-    { title: 'Learn More', variant: 'secondary-alt' },
+    { title: "Learn More", variant: "secondary-alt" },
   ],
   image: {
-    src: './header.png',
-    alt: 'English Alphabet',
+    src: "./header.png",
+    alt: "English alphabet chart, courtesy of language-learning app Busuu's English alphabet guide",
   },
 };
