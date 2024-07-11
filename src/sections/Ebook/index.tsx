@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { Button } from '@relume_io/relume-ui';
-import type { ImageProps, ButtonProps } from '@relume_io/relume-ui';
+import { Button } from "@relume_io/relume-ui";
+import type { ImageProps, ButtonProps } from "@relume_io/relume-ui";
 
 type Props = {
   heading: string;
@@ -10,7 +10,7 @@ type Props = {
   image: ImageProps;
 };
 
-export type EbookProps = React.ComponentPropsWithoutRef<'section'> & Props;
+export type EbookProps = React.ComponentPropsWithoutRef<"section"> & Props;
 
 export const Ebook = (props: Partial<EbookProps>) => {
   const { heading, description, buttons, image } = {
@@ -55,26 +55,26 @@ export const Ebook = (props: Partial<EbookProps>) => {
 };
 
 const EbookDefaults: EbookProps = {
-  heading: 'Unlock Your English Potential Today',
+  heading: "Unlock Your English Potential Today",
   description:
-    'Get one of the best e-book for improving your English skills as a beginner or intermediate.',
+    "Get one of the best e-book for improving your English skills as a beginner or intermediate.",
   buttons: [
     {
-      title: 'Buy',
+      title: "Buy",
       onClick: () => {
-        window.open('https://amzn.to/4dLy0KK', '_blank');
+        window.open("https://amzn.to/3zAM0r0", "_blank");
       },
     },
     {
-      title: 'Learn More',
-      variant: 'secondary',
+      title: "Learn More",
+      variant: "secondary",
       onClick: () => {
-        window.open('https://amzn.to/4dLy0KK', '_blank');
+        window.open("https://amzn.to/3zAM0r0", "_blank");
       },
     },
   ],
   image: {
-    src: './short_stories_for_begginers_language_guru.jpg',
-    alt: 'Placeholder image',
+    src: "./short_stories_for_begginers_language_guru.jpg",
+    alt: "Placeholder image",
   },
 };
